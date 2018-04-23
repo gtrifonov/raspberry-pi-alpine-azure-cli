@@ -4,19 +4,6 @@ ARG CLI_VERSION
 
 # Metadata as defined at http://label-schema.org
 ARG BUILD_DATE
-LABEL maintainer="Microsoft" \
-      org.label-schema.schema-version="1.0" \
-      org.label-schema.vendor="Microsoft" \
-      org.label-schema.name="Azure CLI 2.0" \
-      org.label-schema.version=$CLI_VERSION \
-      org.label-schema.license="MIT" \
-      org.label-schema.description="The Azure CLI 2.0 is the new Azure CLI and is applicable when you use the Resource Manager deployment model." \
-      org.label-schema.url="https://docs.microsoft.com/en-us/cli/azure/overview" \
-      org.label-schema.usage="https://docs.microsoft.com/en-us/cli/azure/install-az-cli2#docker" \
-      org.label-schema.build-date=$BUILD_DATE \
-      org.label-schema.vcs-url="https://github.com/Azure/azure-cli.git" \
-      org.label-schema.docker.cmd="docker run -v \${HOME}/.azure:/root/.azure -it microsoft/azure-cli:$CLI_VERSION"
-
 WORKDIR azure-cli
 COPY . /azure-cli
 # pip wheel - required for CLI packaging

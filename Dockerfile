@@ -4,8 +4,9 @@ ARG CLI_VERSION
 
 # Metadata as defined at http://label-schema.org
 ARG BUILD_DATE
-WORKDIR azure-cli
-COPY . /azure-cli
+Run git clone https://github.com/Azure/azure-cli.git /azure-cli
+WORKDIR /azure-cli
+
 # pip wheel - required for CLI packaging
 # jmespath-terminal - we include jpterm as a useful tool
 RUN pip install --no-cache-dir --upgrade pip wheel jmespath-terminal
